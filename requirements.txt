@@ -10,3 +10,4 @@ python-dotenv
 alembic
 pydantic
 PyJWT
+email-validator==2.1.0.post1
