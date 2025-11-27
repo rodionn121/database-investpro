@@ -79,6 +79,11 @@ def get_current_user(
 
 # ============= AUTH ENDPOINTS =============
 
+
+@app.api_route("/ping", methods=["GET", "HEAD"])
+def ping():
+    return {"status": "alive"}
+
 @app.post("/api/auth/register", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 def register(user_data: UserCreate, db: Session = Depends(get_db)):
     """Register a new user"""
